@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ImaginateAR</title>
+  <meta name="description"
+    content="ImaginateAR: AI‑Assisted In‑Situ Authoring in Augmented Reality">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+
+  <!-- Facebook preview -->
+  <meta property="og:image" content="resources/social_card.png">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="..." />
+  <meta property="og:title"
+    content="ImaginateAR: AI‑Assisted In‑Situ Authoring in Augmented Reality" />
+  <meta property="og:description"
+    content="ImaginateAR: AI‑Assisted In‑Situ Authoring in Augmented Reality, 2025" />
+
+  <!-- Twitter preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title"
+    content="ImaginateAR: AI‑Assisted In‑Situ Authoring in Augmented Reality" />
+  <meta name="twitter:description"
+    content="ImaginateAR: AI‑Assisted In‑Situ Authoring in Augmented Reality, 2025" />
+  <meta name="twitter:image" content="resources/social_card.png">
+
+  <!-- Google Scholar Meta Tags -->
+  <meta name="citation_title" content="ImaginateAR: AI‑Assisted In‑Situ Authoring in Augmented Reality">
+  <meta name="citation_author" content="Jaewook Lee">
+  <meta name="citation_author" content="Filippo Aleotti">
+  <meta name="citation_author" content="Diego Mazala">
+  <meta name="citation_author" content="Guillermo Garcia‑Hernando">
+  <meta name="citation_author" content="Sara Vicente">
+  <meta name="citation_author" content="Oliver James Johnston">
+  <meta name="citation_author" content="Isabel Kraus‑Liang">
+  <meta name="citation_author" content="Jakub Powierza">
+  <meta name="citation_author" content="Donghoon Shin">
+  <meta name="citation_author" content="Jon E. Froehlich">
+  <meta name="citation_author" content="Gabriel Brostow">
+  <meta name="citation_author" content="Jessica Van Brummelen">
+  <meta name="citation_publication_date" content="2025-04">
+  <!-- assume acceptance at UIST 2025 -->
+  <meta name="citation_conference_title"
+    content="Proceedings of UIST 2025">
+  <meta name="citation_conference" content="UIST 2025">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2504.21360">
+
+  <!-- Style -->
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" type="image/png" href="resources/favicon.png">
+</head>
+<body>
+  <div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row">
+      <h1 style="margin-bottom:0.1rem; font-variant: small-caps;">ImaginateAR</h1>
+      <h3 style="margin-top:0.1rem;margin-bottom:0.5rem;">
+        AI‑Assisted In‑Situ Authoring in Augmented Reality</h3>
+      <h4 style="font-size:1.4em;">Accepted to UIST 2025</h4>
+    </div>
+    <div class="row" style="margin-top:1rem;">
+      <h4 style="font-size:1.1em;">
+        <a href="https://jaewook-lee.com/">Jaewook Lee<sup>1*</sup></a> &emsp;
+        <a href="https://filippoaleotti.github.io/website/">Filippo Aleotti<sup>2*</sup></a> &emsp;
+        <a href="https://www.researchgate.net/profile/Diego-Mazala">Diego Mazala<sup>2</sup></a> &emsp;
+        <a href="https://guiggh.github.io/">Guillermo Garcia‑Hernando<sup>2</sup></a> &emsp;
+        <a href="https://scholar.google.com/citations?hl=en&user=7wWsNNcAAAAJ">Sara Vicente<sup>2</sup></a> &emsp;
+        <a href="https://www.linkedin.com/in/oliver-johnston/">Oliver Johnston<sup>2</sup></a> &emsp;
+        <a href="https://www.linkedin.com/in/isabelkrausliang/">Isabel Kraus‑Liang<sup>2</sup></a> &emsp;
+        <a href="https://jpowierza.pages.dev/about?utm_source=chatgpt.com">Jakub Powierza<sup>2</sup></a> &emsp;
+        <a href="https://donghoon.io/">Donghoon Shin<sup>1</sup></a> &emsp;
+        <a href="https://jonfroehlich.github.io/">Jon E. Froehlich<sup>1</sup></a> &emsp;
+        <a href="http://www0.cs.ucl.ac.uk/staff/g.brostow/">Gabriel Brostow<sup>2,3</sup></a> &emsp;
+        <a href="https://jessvb.github.io/">Jessica Van Brummelen<sup>2</sup></a>
+      </h4>
+      <div><sup>1</sup>University of Washington &nbsp;&nbsp; <sup>2</sup>Niantic Spatial, Inc. &nbsp;&nbsp; <sup>3</sup>University College London</div>
+      <div style="font-size:0.9em; margin-top:0.5em;"><sup>*</sup>Equal contribution</div>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 1000px">
+    <div class="row" style="text-align: center; padding:1rem">
+      <div class="col-xs-3"></div>
+      <div class="col-xs-2">
+        <a href="resources/ImaginateAR_UIST_25.pdf" style="color:inherit">
+          <a href="resources/ImaginateAR_UIST_25.pdf">
+            <i class="fa-solid fa-file-pdf fa-4x"></i></a>
+      </div>
+
+      <div class="col-xs-2">
+        <a href="https://arxiv.org/abs/2504.21360" style="color:inherit;">
+          <a href="https://arxiv.org/abs/2504.21360">
+            <i class="fas fa-book fa-4x"></i></a>
+      </div>
+
+      <div class="col-xs-2">
+        <a href="https://youtu.be/G9mH1HKSPkg" style="color:inherit;">
+          <a href="https://youtu.be/G9mH1HKSPkg"> <!-- TODO: add video -->
+            <i class="fa-brands fa-youtube fa-4x"></i></a>
+      </div>
+
+      <div class="col-xs-4"></div>
+
+    </div>
+  </div>
+
+
+  <div class="container" style="text-align:center; padding:1rem">
+    <br>
+    <img src="resources/ImaginateAR_Teaser.png"
+      alt="A system overview and user flow diagram. On the left, a person is scanning a real-world environment, which ImaginateAR uses to perform scene understanding offline. On the right, a user arrives at the same location and localizes against the real world environment. They can then speak to ImaginateAR’s AI agents and make manual modifications, before exploring the generated AR scene."
+      class="text-center" style="width: 100%; max-width: 1200px">
+  </div>
+
+
+  <div class="container" style="max-width:1000px;">
+    <h3>Abstract</h3><hr/>
+    <p>
+      While augmented reality (AR) enables new ways to play, tell stories, and explore ideas rooted in the physical world, authoring personalized AR content remains difficult for non-experts, often requiring professional tools and time.
+      Prior systems have explored AI-driven XR design but typically rely on manually defined VR environments and fixed asset libraries, limiting creative flexibility and real-world relevance. 
+      We introduce ImaginateAR, the first mobile tool for AI-assisted AR authoring to combine offline scene understanding, fast 3D asset generation, and LLMs&mdash;enabling users to create outdoor scenes through natural language interaction. 
+      For example, saying “a dragon enjoying a campfire” (P7) prompts the system to generate and arrange relevant assets, which can then be refined manually. 
+      Our technical evaluation shows that our custom pipelines produce more accurate outdoor scene graphs and generate 3D meshes faster than prior methods. 
+      A three-part user study (N=20) revealed preferred roles for AI, how users create in freeform use, and design implications for future AR authoring tools. 
+      ImaginateAR takes a step toward empowering anyone to create AR experiences anywhere&mdash;simply by speaking their imagination.
+    </p>
+    <br>
+
+    <h3>Video</h3><hr/>
+    <div style="width: 100%; max-width: 1200px">
+      <iframe style="width: 100%; height: auto; aspect-ratio: 16 / 9; display: block;" src="https://www.youtube.com/embed/G9mH1HKSPkg?si=syFwbSf9nlar9iWr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <br>
+
+    <h3>Example Creations</h3><hr/>
+    <p>
+      We first showcase AR scenes authored using ImaginateAR. 
+      These include 6 scenes created by the research team for the purposes of proof by demonstration, as well as 24 scenes authored by the participants in our user study (N=20 + 4 pilot) during a free-form authoring phase.
+    </p>
+    <br>
+    <img src="resources/proof_by_demonstration.png"
+      alt="A proof by demonstration showing screenshots of ImaginateAR with various AR assets in real-world scenes, such as a colorful ‘silly hat’ on a real-world, metallic pig statue."
+      class="text-center" style="width: 100%; max-width: 1200px">
+    <figcaption style="margin-top: 1em; text-align: left;">
+      Six example creations from our technical evaluation, situated in a park, schoolyard, playground, shopping center, and backyard. 
+      Each scene was first generated with AI tools, then refined with light manual adjustments to reflect typical ImaginateAR use. 
+      Some are whimsical (A, F), while others are educational (C, E) or playful (B, D).
+    </figcaption>
+    <br>
+    <img src="resources/user_creations.png"
+      alt="A collage of 24 AR scenes created by participants during Part 2 of the user study. Examples include ‘a dog enjoying a campfire’, ‘animal kingdom with cat, horse, and fox’, and ‘a dancing T-Rex on grass’."
+      class="text-center" style="width: 100%; max-width: 1200px">
+    <figcaption style="margin-top: 1em; text-align: left;">
+      AR experiences created by participants (N=20 + 4 pilot) while interacting with the ImaginateAR prototype. 
+      Users were encouraged to create freely without limitations. 
+      'PP' denotes pilot participants and 'P' study participants.
+    </figcaption>
+    <br>
+
+    <h3>System Overview</h3><hr/>
+    <p>
+      ImaginateAR integrates three technical innovations: (1) <strong>Outdoor scene understanding</strong> using enhanced OpenMask3D with GPT‑4o semantic labeling and HDBSCAN clustering to build structured scene graphs; (2) <strong>Fast 3D mesh generation</strong> via GPT‑4o prompt expansion, reference image synthesis, segmentation (DIS) and mesh lifting (InstantMesh); (3) <strong>LLM‑driven speech interaction</strong>, enabling users to place and refine assets through natural spoken commands in real time.
+    </p>
+    <br>
+    <img src="resources/main_pipeline_edited.png"
+      alt="Diagram of the 3D scene understanding pipeline. Point cloud becomes an initial set of masks through 3D mask prediction, which becomes semantic point cloud thorugh filtering and classification, then becomes final set of masks through clustering. Result is 3D bounding boxes of objects’ corresponding masks."
+      class="text-center" style="width: 100%; max-width: 1200px">
+    <figcaption style="margin-top: 1em; text-align: left;">
+      Diagram of the 3D scene understanding pipeline. 
+      Given an input point cloud, we first estimate 3D masks. 
+      Next, we assign a semantic label to each mask using a VLM and propagate the label to all points within the mask, producing a semantic point cloud. 
+      We then cluster nearby points with the same label to infer the final set of 3D masks, from which we extract 3D bounding boxes. 
+      For visualization, we show only the bounding boxes, not the underlying masks. 
+      The <em>Pavement</em> box is enclosed within the <em>Road</em> box and is therefore not visible.
+    </figcaption>
+    <br>
+    <img src="resources/result_merged.png"
+      alt="Result of the 3D scene understanding module on Vase, House, and Garden 3D environments. Different real-world features such as flowers, sidewalks, trees, and grass are represented as 3D bounding boxes."
+      class="text-center" style="width: 100%; max-width: 1200px">
+    <figcaption style="margin-top: 1em; text-align: left;">
+      Results of the 3D scene understanding module. 
+      For each of the three scans&mdash;<em>Vase</em>, <em>House</em>, and <em>Garden</em>&mdash;we visualize the input point cloud (left) and the final set of labeled 3D bounding boxes inferred by our scene understanding pipeline (right). 
+      We also report the total time (in minutes) required to estimate the scene graph for each scan. 
+      Note that some bounding boxes may be enclosed within others and may therefore be occluded.
+    </figcaption>
+    <br>
+    <img src="resources/mesh_generation_edited.png"
+      alt="Example 3D asset generation. A simple prompt, ‘a roman statue’ is prompt boosted with visual examples to include beneficial words like `detailed’. This goes through text-to-image generation, then image-to-3D for the final generated mesh."
+      class="text-center" style="width: 100%; max-width: 1200px">
+    <figcaption style="margin-top: 1em; text-align: left;">
+      Example of 3D asset generation. 
+      Given a user prompt, we first apply prompt boosting, then use Dall-E 2 to generate a consistent image by editing the center region of a white canvas. 
+      The image is then lifted to 3D using InstantMesh. 
+      The 'Bad' example (right) illustrates a failure case because it would produce a partial 3D object (i.e., only the dragon’s head). 
+      Prompt boosting helps avoid such incomplete generations.
+    </figcaption>
+    <br>
+
+    <h3>User Study & Evaluation</h3><hr/>
+    <p>
+      We evaluated ImaginateAR through a technical assessment and a three-part user study (N=20) in a public park.
+      Our scene understanding pipeline outperformed the base OpenMask3D model and ablated variants, while our asset generation pipeline matched state-of-the-art quality with a faster, sub-minute runtime.
+      The user study included: a comparison task across three authoring modes&mdash;<em>manual</em>, <em>AI-assisted</em>, and <em>AI-decided</em>&mdash;to explore control vs. automation (Part 1); a free-form phase where participants designed their own AR experiences (Part 2); and a co-design session reflecting on AI’s role and envisioning future features (Part 3).
+      Overall, participants enjoyed creating diverse AR scenes and favored a <em>hybrid approach</em>—using AI for rapid, creative generation while retaining manual control for customization.
+      Examples of both research team–created and user-authored scenes appear earlier on this page.
+      For more details, please see our paper.
+    </p>
+    <br>
+    <img src="resources/comparison_stop-sign.png"
+      alt="A comparison of bounding boxes between the Ground Truth, OpenMask3D, and Ours. It is clear that OpenMask3D has an excessive number of bounding boxes compared to the Ground Truth and Ours."
+      class="text-center" style="width: 100%; max-width: 1200px">
+    <figcaption style="margin-top: 1em; text-align: left;">
+      From left to right: bounding boxes from the ground truth, OpenMask3D, and our proposed method. 
+      OpenMask3D predicts a large number of masks, resulting in excessive bounding boxes that over-represent the same scene objects. 
+      In contrast, our method produces fewer, more accurate boxes. (Box colors are arbitrary and can be ignored.)
+    </figcaption>
+    <br>
+    <img src="resources/mobile_app_overview.png"
+      alt="UI layout of ImaginateAR. Users can access different features of ImaginateAR through buttons such as lightbulb icon for brainstorming and mic icon for speaking to an AI agent."
+      class="text-center" style="width: 100%; max-width: 1200px">
+    <figcaption style="margin-top: 1em; text-align: left;">
+      Different screen captures of the ImaginateAR's mobile interface showing the UI layout and functionalities. 
+      Users can access manual, AI-assisted, and AI-decided modes across different features through buttons on the screen.
+    </figcaption>
+    <br>
+
+    <h3>Resources</h3><hr/>
+    <div class="row text-center"> <!-- todo: thumbnails & links below -->
+      <div class="col-xs-2 col-lg-2"></div>
+      <div class="col-xs-4 col-lg-4"><h4>Paper</h4><a href="resources/ImaginateAR_UIST_25.pdf"><img src="resources/ImaginateAR_UIST_25_Thumbnail.png" alt="Paper thumbnail" style="max-width:70%; border:0.15em solid; border-radius:0.5em;"></a></div>
+      <div class="col-xs-4 col-lg-4"><h4>Supplemental</h4><a href="resources/ImaginateAR_UIST_25_Supplement.pdf"><img src="resources/ImaginateAR_UIST_25_Supplement_Thumbnail.png" alt="Supplemental thumbnail" style="max-width:70%; border:0.15em solid; border-radius:0.5em;"></a></div>
+      <div class="col-xs-2 col-lg-2"></div>
+    </div>
+    <br>
+    <h4 style="padding-top:0.5em">BibTeX</h4>
+    <p>If you find this work useful for your research, please cite:</p>
+    <div class="card">
+      <div class="card-block">
+        <pre class="card-text clickselect">
+@inproceedings{lee2025imaginatear,
+  author = {Lee, Jaewook and Aleotti, Filippo and Mazala, Diego and Garcia‑Hernando, Guillermo and Vicente, Sara and Johnston, Oliver James and Kraus‑Liang, Isabel and Powierza, Jakub and Shin, Donghoon and Froehlich, Jon E. and Brostow, Gabriel and Van Brummelen, Jessica},
+  title = {ImaginateAR: AI‑Assisted In‑Situ Authoring in Augmented Reality},
+  year = {2025},
+  isbn = {9798400720376},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3746059.3747635},
+  doi = {10.1145/3746059.3747635},
+  booktitle = {Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology},
+  location = {Busan, Republic of Korea},
+  series = {UIST '25},
+}</pre>
+      </div>
+    </div>
+    <br>
+
+    <h3>Acknowledgements</h3><hr/>
+    <p>
+      We thank the ImaginateAR research team and study participants. ImaginateAR builds on earlier work by many of the same authors (e.g., CoCreatAR). Specific funding and acknowledgements are referenced in the full preprint.
+    </p>
+  </div>
+
+  <div class="container" style="padding-top:3rem; padding-bottom:3rem">
+    <p style="text-align:center">
+      &#169; This webpage was inspired by this
+      <a href="https://nianticlabs.github.io/simplerecon/">template</a>.
+    </p>
+  </div>
+</body>
+</html>
