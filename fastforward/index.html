@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>FastForward: A Scene is Worth a Thousand Features</title>
+  <meta name="description" content="FastForward: A Scene is Worth a Thousand Features">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+  <link rel="icon" href="resources/NianticSpatialLogo.png">
+
+    <!--Facebook preview-->
+  <meta property="og:title" content="A Scene is Worth a Thousand Features: Feed-Forward Camera Localization from a Collection of Image Features">
+  <meta property="og:description" content="Fast mapping and localization through a single feed-forward pass.">
+  <meta property="og:url" content="https://nianticspatial.github.io/fastforward/">
+
+  <!--Twitter preview-->
+  <meta name="twitter:card" content="summary_large_image" /> 
+  <meta name="twitter:title" content="A Scene is Worth a Thousand Features: Feed-Forward Camera Localization from a Collection of Image Features" />
+  <meta name="twitter:description" content="Fast mapping and localization through a single feed-forward pass."/>
+
+  <!--Style-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+  rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+  crossorigin="anonymous">
+  
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link href="style.css" rel="stylesheet">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+  crossorigin="anonymous"></script>
+  <script src="js/app.js"></script>
+
+  
+  <!-- Carousel logic: -->
+  <script src="js/app.js"></script>
+
+</head>
+
+<body>
+
+<div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row" style="text-align:center">
+      <h1 style="margin-bottom:-2.6rem;">A Scene is Worth a Thousand Features:</h1>
+      <h1 style="margin-bottom:1.5rem;">Feed-Forward Camera Localization from a Collection of Image Features</h1>
+    </div>
+
+    <div class="row" style="text-align:center; margin-top:1rem;">
+      <div class="col-xs-0 col-md-4"></div>
+      <div class="col-xs-12 col-md-16">
+        <h4>
+          <a style="font-size:1.0em; text-decoration: none;" href="https://scholar.google.com/citations?user=m_SPRGUAAAAJ&hl=en">
+            <nobr>Axel Barroso-Laguna<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.0em; text-decoration: none;" href="https://scholar.google.it/citations?user=r7osSm0AAAAJ&hl=en">
+            <nobr>Tommaso Cavallari<sup>1</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.0em; text-decoration: none;" href="https://www.robots.ox.ac.uk/~victor/">
+            <nobr>Victor Adrian Prisacariu<sup>1,2</sup></nobr>
+          </a> &emsp;
+          <a style="font-size:1.0em; text-decoration: none;" href="https://ebrach.github.io/">
+            <nobr>Eric Brachmann<sup>1</sup></nobr>
+          </a> 
+        </h4>
+        <sup>1</sup>Niantic Spatial&nbsp;&nbsp;&nbsp;<sup>2</sup>University of Oxford&nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="col-xs-0 col-md-2"></div>
+    </div>
+  </div>
+
+<!-- 
+  <div class="container" style="max-width: 1100px">
+    <div class="row" style="text-align: center; padding:1rem">
+      <div class="col-3"></div>
+            <div class="col-2">
+        <a href="https://arxiv.com">
+          <i class="fa-solid fa-file-pdf fa-4x"></i></a>
+      </div>
+      <div class="col-2">
+        <a href="https://github.com/nianticspatial/fastforward">
+          <i class="fa fa-github fa-4x"></i></a>
+      </div>
+      <div class="col-2">
+        <a href="#citation">
+          <i class="fa fa-book fa-4x"></i></a>
+      </div>
+
+      <div class="col-3"></div>
+            
+    </div>
+  </div> -->
+
+  <div class="container" style="max-width: 1100px">
+    <div class="row" style="text-align: center; padding:1rem">
+      
+      <div class="col-4"></div> <div class="col-2">
+        <a href="https://arxiv.com">
+          <i class="fa-solid fa-file-pdf fa-4x"></i></a>
+      </div>
+
+      <div class="col-2">
+        <a href="#citation">
+          <i class="fa fa-book fa-4x"></i></a>
+      </div>
+
+    <div class="col-4"></div> </div>
+  </div>
+
+  <!-- Add space here -->
+  <div style="height: 5rem;"></div>
+  <div class="container">
+    <video id="overviewVideo" autoplay loop muted style="max-width: 70%; height: auto; box-sizing: border-box; margin: 0 auto; display: block;">
+      <source src="resources/videos/s00014.mp4" type="video/mp4">
+    </video>
+
+
+  <h3 id="abstract_h3" style="text-align: center; margin-top:-7rem;">Abstract</h3>
+    <hr />
+    <p>
+    Visually localizing an image, <i>i.e.</i>, estimating its camera pose, requires building a scene representation that serves as a visual map.
+    The representation we choose has direct consequences towards the practicability of our system.
+    Even when starting from mapping images with known camera poses, state-of-the-art approaches still require hours of mapping time in the worst case, and several minutes in the best.
+    This work raises the question whether we can achieve competitive accuracy much faster.
+    We introduce FastForward, a method that creates a map representation and relocalizes a query image on-the-fly in a single feed-forward pass.
+    At the core, we represent multiple mapping images as a collection of features anchored in 3D space.
+    FastForward utilizes these mapping features to predict image-to-scene correspondences for the query image, enabling the estimation of its camera pose.
+    We couple FastForward with image retrieval and achieve state-of-the-art accuracy when compared to other approaches with minimal map preparation time.
+    Furthermore, FastForward demonstrates robust generalization to unseen domains, including challenging large-scale outdoor environments.
+    <!-- <b>The code will be available soon.</b> -->
+  </p>
+
+  <h3 style="text-align: center;" class="mt-5">FastForward</h3>
+    <hr class="hr"/>    
+    <p>      
+      We introduce FastForward, a network that predicts query coordinates in 3D scene space relative to a collection of mapping images with known poses. 
+      FastForward represents the scene as a random set of features sampled from mapping images, and returns the estimate for a query <i>w.r.t.</i> all mapping images in a single feed-forward pass.
+      In the figure below, we show how results improve when FastForward uses an increasing number of mapping images, as returned by image retrieval. 
+      Note that we can sample the same number of mapping features, and hence, FastForward's query runtime and GPU memory demand remains roughly constant in all three examples.
+    </p>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <figure class="text-center">
+        <img src="resources/ff_teaser.png" class="text-center" style="width: 89%; margin-top:
+      10px; margin-bottom: -20px;"><br /><br /><br />
+      </div>
+    </div>
+
+    <p> 
+      FastForward uses a ViT feature extractor to compute the features from the query and mapping images. 
+      Mapping features and camera pose information are used to generate the map representation of the scene.      
+      For each mapping feature used in the map, we define a ray embedding that encodes the corresponding camera's position and viewing direction.
+      Visual features and ray embedding are fused into a single feature vector. 
+      The map representation is created by randomly sampling a fixed number of mapping features.
+      A Transformer block and a DPT head are used to predict the 3D query points in the map coordinate system.
+      Finally, 2D-3D correspondences are used to estimate the query pose.
+    </p>
+
+    <div class="row" style="text-align: center">
+      <div class="col-xs-12">
+        <figure class="text-center">
+        <img src="resources/ff_system_fig.png" class="text-center" style="width: 80%; margin-top:
+      10px; margin-bottom: -5rem;"><br /><br /><br />
+      </div>
+    </div>
+
+    <h3 style="text-align: center;" class="mt-5">Visual Localization</h3>
+    <hr class="hr"/>    
+    <p>
+      We show examples of FastForward, doing mapping and localization of query images in a single forward-pass.   
+      Instead of using all the available mapping images, we represent the scene by selecting the top K images based on a retrieval step.
+      For outdoor data we use 20 mapping images, while indoor examples use 10 mapping images. From each mapping image we sample 20% of the features.
+      We show the predicted query pose in blue and the ground truth pose in green. 
+      We also show the camera trajectories for the mapping images in gray, and additionally display the camera frustum for the mapping images used in the prediction.
+    </p>
+    <p><b>
+      There are two videos per dataset. Use the left and right navigation buttons to switch between the two scenes. 
+    </b></p>
+    
+    <div class="container" style="text-align: center; margin-bottom: 2rem;">
+      <button id="DatasetBtn1" class="btn btn-primary">Map-free</button>
+      <button id="DatasetBtn2" class="btn btn-secondary">Wayspots</button>
+      <button id="DatasetBtn3" class="btn btn-secondary">Cambridge</button>
+      <button id="DatasetBtn4" class="btn btn-secondary">Indoor6</button>
+    </div>
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7" aria-label="Slide 8"></button>
+     </div>
+
+      <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video id="s00219" class="w-100" style="max-width: 70%; margin: 0 auto; display: block;" autoplay loop muted>
+              <source src="resources/videos/s00219.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block" style="bottom: 0;">
+            <h5>s00219</h5>
+        </div>
+        </div>
+        
+        <div class="carousel-item">
+          <video class="w-100" style="max-width: 70%; margin: 0 auto; display: block;"  autoplay loop muted>
+            <source src="resources/videos/s00406.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>s00406</h5>
+          </div>
+        </div>
+        
+        <div class="carousel-item">
+          <video class="w-100" style="max-width: 70%; margin: 0 auto; display: block;"  autoplay loop muted>
+            <source src="resources/videos/wayspots_therock.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>The Rock</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <video class="w-100" style="max-width: 70%; margin: 0 auto; display: block;"  autoplay loop muted>
+            <source src="resources/videos/wayspots_bears.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Bears</h5>
+          </div>
+        </div>
+        
+        <div class="carousel-item">
+          <video id="cambridge_shop" style="max-width: 70%; margin: 0 auto; display: block;" class="w-100" autoplay loop muted>
+            <source src="resources/videos/ShopFacade.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Shop Facade</h5>
+          </div>
+        </div>
+                
+        <div class="carousel-item">
+          <video id="KingsCollege" style="max-width: 70%; margin: 0 auto; display: block;" class="w-100" autoplay loop muted>
+            <source src="resources/videos/KingsCollege.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>King's College</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <video id="Indoor6Scene2_light" style="max-width: 70%; margin: 0 auto; display: block;"  class="w-100" autoplay loop muted>
+            <source src="resources/videos/scene2a_light.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Scene2a-light</h5>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <video id="Indoor6Scene2_dark" class="w-100" style="max-width: 70%; margin: 0 auto; display: block;"  autoplay loop muted>
+            <source src="resources/videos/scene2a_dark.mp4" type="video/mp4" />
+          </video>
+          <div class="carousel-caption d-none d-md-block" style="bottom: 0;">
+            <h5>Scene2a-dark</h5>
+          </div>
+        </div>
+        
+      </div>
+      <button class="carousel-control-prev big-carousel-control" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next big-carousel-control" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+  <h3 style="text-align: center;" class="mt-5">Extreme Localization Scenarios</h3>
+  <hr class="hr"/>    
+  <p>
+    We evaluate FastForward against the baseline methods Reloc3r and MASt3R in extreme visual localization scenarios. 
+    For the Wayspots scenes, we only display Reloc3r estimates as MASt3R was trained on this dataset. 
+    In the Wayspots scenes, we highlight two challenging scenarios: opposing shots (<i>i.e.</i>, mapping and query scans taken from opposite viewpoints) and symmetric scenes (<i>i.e.</i>, scene with similar appearance from different viewpoints). 
+    We also present results on the Cambridge dataset to demonstrate how the methods generalize to scenes with scale ranges unseen during training. 
+  </p>
+  <p><b>
+      There are two videos per dataset. Use the left and right navigation buttons to switch between the two scenes. 
+    </b></p>
+   <div class="container" style="text-align: center; margin-bottom: 2rem;">
+    <button id="example1Btn" class="btn btn-primary">Reloc3r</button>
+    <button id="example2Btn" class="btn btn-secondary">Reloc3r & MASt3R</button>
+  </div>
+  
+  <div id="carouselExampleChallenging" class="carousel slide" data-interval="false">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleChallenging" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleChallenging" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleChallenging" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleChallenging" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active example1">
+        <video id="Lawn" style="max-width: 70%; margin: 0 auto; display: block;" class="w-100" autoplay loop muted>
+          <source src="resources/videos/wayspots_lawn.mp4" type="video/mp4" />
+        </video>
+        <div class="carousel-caption d-none d-md-block" style="bottom: 0;">
+          <h5>Opposing viewpoints (Lawn)</h5>
+        </div>
+      </div>
+  
+      <div class="carousel-item example1">
+        <video id="SquareBench" class="w-100" style="max-width: 70%; margin: 0 auto; display: block;" autoplay loop muted>
+          <source src="resources/videos/wayspots_squarebench.mp4" type="video/mp4" />
+        </video>
+        <div class="carousel-caption d-none d-md-block" style="bottom: 0;">
+          <h5>Symmetric scene (Square Bench)</h5>
+        </div>
+      </div>
+  
+      <div class="carousel-item example2">
+        <video id="StMaryChurch" style="max-width: 70%; margin: 0 auto; display: block;" class="w-100" autoplay loop muted>
+          <source src="resources/videos/StMarysChurch.mp4" type="video/mp4" />
+        </video>
+        <div class="carousel-caption d-none d-md-block" style="bottom: 0;">
+          <h5>Unseen Large-scale Scene (St Mary's Church)</h5>
+        </div>
+      </div>
+  
+      <div class="carousel-item example2">
+        <video id="OldHospital" style="max-width: 70%; margin: 0 auto; display: block;" class="w-100" autoplay loop muted>
+          <source src="resources/videos/OldHospital.mp4" type="video/mp4" />
+        </video>
+        <div class="carousel-caption d-none d-md-block" style="bottom: 0;">
+          <h5>Unseen Large-scale Scene (Old Hospital)</h5>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev big-carousel-control" type="button" data-bs-target="#carouselExampleChallenging" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next big-carousel-control" type="button" data-bs-target="#carouselExampleChallenging" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Add space here -->
+  <div style="height: 2rem;"></div>
+
+  <h3 style="text-align: center;" id="citation">BibTeX</h3>
+    <hr />
+    <p>If you find this work useful for your research, please consider citing our paper:</p>
+    <div class="card">
+        <pre class="card-text">
+@inproceedings{barroso2025fastforward,
+    title={A Scene is Worth a Thousand Features: Feed-Forward Camera Localization from a Collection of Image Features},
+    author={Barroso-Laguna, Axel and Cavallari, Tommaso and Prisacariu, Victor and Brachmann, Eric},
+    booktitle={arxiv},
+    year={2025}
+}</pre>
+ 
+<script>
+  document.getElementById('overviewVideo').playbackRate = 0.8;
+  document.getElementById('cambridge_shop').playbackRate = 1.2; 
+  document.getElementById('KingsCollege').playbackRate = 1.2;
+  document.getElementById('Indoor6Scene2_light').playbackRate = 0.5;
+  document.getElementById('Indoor6Scene2_dark').playbackRate = 0.5;
+  document.getElementById('OldHospital').playbackRate = 1.1;
+  document.getElementById('StMaryChurch').playbackRate = 0.9;
+</script>
+
+</html>
