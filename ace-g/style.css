@@ -1,0 +1,204 @@
+:root {
+  color-scheme: dark;
+  scrollbar-color: #e07467 #303030;
+  scrollbar-width: thin;
+}
+
+img {
+  width: 100%;
+  margin: auto;
+}
+
+pre {
+  scrollbar-width: thin;
+}
+
+.row {
+  margin-bottom: 1rem;
+}
+
+body {
+  background-color: #1b1b1b;
+  color: #ffffff;
+  max-width: 95ch;
+  margin: auto;
+  padding-left: 2ch;
+  padding-right: 2ch;
+}
+
+h1 {
+  padding-top: 3rem;
+}
+
+h2 {
+}
+
+h3 {
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+  font-size: min(calc(0.9rem + 00.9vw), 1.5rem);
+}
+
+h4 {
+  font-size: min(calc(0.9rem + 00.9vw), 1.4rem);
+}
+
+video { 
+  clip-path: inset(3px 3px);
+}
+
+.brightness-fix {
+  filter: brightness(94%);
+}
+
+
+video::-webkit-media-controls-panel {
+  background-image: linear-gradient(transparent, transparent) !important;
+}
+
+.venue {
+  font-size: 1.4em;
+}
+
+.company {
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 0.5rem;
+}
+.company-logo {
+  height: min(calc(3rem + 2vw), 4.5rem);
+}
+
+.authors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 3em;
+  margin-top: 0.5rem;
+}
+
+.author {
+  display: block;
+  margin-bottom: 0;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: min(calc(1.5rem + 1.2vw), 3rem);
+  margin-top: 0.5rem;
+}
+
+.icon {
+  width: min(calc(2.5rem + 1.8vw), 4rem);
+  height: min(calc(2.5rem + 1.8vw), 4rem);
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(57%) sepia(15%) saturate(1853%)
+    hue-rotate(318deg) brightness(95%) contrast(84%);
+  display: block;
+  margin-bottom: 0;
+}
+.icon:hover {
+  filter: brightness(0) saturate(100%) invert(87%) sepia(24%) saturate(1039%)
+    hue-rotate(302deg) brightness(94%) contrast(94%);
+}
+
+.scene-btn {
+  border-width: medium;
+  border-color: #e07467;
+  background-color: #1b1b1b;
+}
+.scene-btn:hover, .scene-btn:focus{
+  border-width: medium;
+  border-color: #e07467 !important;
+  background-color: #303030 !important;
+  color: #ffffff !important;
+}
+.scene-btn.active, .scene-btn:active {
+  border-width: medium;
+  border-color: #e07467 !important;
+  background-color: #e07467 !important;
+}
+.dataset-label {
+  margin-top: 0.5ch;
+}
+
+a {
+  color: #e07467;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #eaaaa2;
+}
+
+#architecture {
+  width: min(100%, 30rem);
+}
+#mapping {
+  width: min(100%, 33rem);
+}
+#relocalization {
+  width: min(100%, 42rem);
+}
+
+hr {
+  margin-top: -1.2rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 0.3rem solid #e07467;
+  opacity: 1;
+}
+
+p {
+  text-align: justify;
+  font-size: 1.1rem;
+  font-size: min(calc(0.8rem + 00.9vw), 1.2rem);
+}
+
+.card {
+  margin-bottom: 5rem;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.carousel-caption {
+  top: 83%;
+  box-shadow: none;
+  text-shadow: none;
+  color: rgb(99, 96, 96);
+}
+
+.carousel-caption h5 {
+  font-size: 16px;
+}
+
+.carousel-control-prev-icon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(74deg) brightness(104%) contrast(101%);
+  position: absolute;
+  top: 85%;
+  background-size: 2em 20em;
+}
+
+.carousel-control-next-icon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(74deg) brightness(104%) contrast(101%);
+  position: absolute;
+  top: 85%;
+  background-size: 2em 20em;
+}
+
+.carousel-item {
+  display: none;
+}
+
+.carousel-item.active.example1 {
+  display: block;
+}
+
+.carousel-indicators button {
+  display: none;
+}
