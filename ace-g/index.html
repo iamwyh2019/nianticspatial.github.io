@@ -154,8 +154,14 @@
     </div>
 
     <div class="row" style="text-align: center">
-      <video loop muted autoplay crossorigin="anonymous" oncanplay="setVideoBgColorDelayed(this,[8,31,60])">
-        <source src="static/teaser.mp4" type="video/mp4"/>
+      <video
+        loop
+        muted
+        autoplay
+        crossorigin="anonymous"
+        oncanplay="setVideoBgColorDelayed(this)"
+      >
+        <source src="static/teaser.mp4" type="video/mp4" />
       </video>
     </div>
 
@@ -184,7 +190,10 @@
     <hr />
     <div class="row" style="text-align: center">
       <video controls>
-        <source src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/presentation.mp4" type="video/mp4" />
+        <source
+          src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/presentation.mp4"
+          type="video/mp4"
+        />
       </video>
     </div>
 
@@ -229,10 +238,10 @@
       to force the network to generalize from the mapping data (that was moved into the
       map codes) to query data.
     </p>
-      <img
-        src="static/pre-training.svg"
-        alt="Pre-training architecture split into mapping pre-training and quer-pretraining."
-      />
+    <img
+      src="static/pre-training.svg"
+      alt="Pre-training architecture split into mapping pre-training and quer-pretraining."
+    />
 
     <h3>Mapping</h3>
     <hr />
@@ -267,7 +276,11 @@
     </div>
 
     <p>
-      Below we visualize the estimated scene coordinates of ACE-G for different scenes. In addition, we show the <span style="color:rgb(122,188,204)">ground-truth</span> camera pose, and the estimates of <span style="color:#e07467">ACE-G</span> and <span style="color:rgb(152,175,117)">ACE</span>.
+      Below we visualize the estimated scene coordinates of ACE-G for different scenes. In
+      addition, we show the
+      <span style="color: rgb(122, 188, 204)">ground-truth</span> camera pose, and the
+      estimates of <span style="color: #e07467">ACE-G</span> and
+      <span style="color: rgb(152, 175, 117)">ACE</span>.
     </p>
     <div id="sceneCarousel" class="carousel slide mb-4" data-bs-ride="false">
       <div class="carousel-inner">
@@ -275,7 +288,10 @@
         <div class="carousel-item active">
           <div class="ratio ratio-16x9">
             <video class="d-block w-100" loop muted autoplay>
-              <source src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/example_scenes/indoor6_scene1.mp4" type="video/mp4">
+              <source
+                src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/example_scenes/indoor6_scene1.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -286,7 +302,10 @@
         <div class="carousel-item">
           <div class="ratio ratio-16x9">
             <video class="d-block w-100" loop muted>
-              <source src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/example_scenes/indoor6_scene3.mp4" type="video/mp4">
+              <source
+                src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/example_scenes/indoor6_scene3.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -297,7 +316,10 @@
         <div class="carousel-item">
           <div class="ratio ratio-16x9">
             <video class="d-block w-100" loop muted>
-              <source src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/example_scenes/indoor6_scene5.mp4" type="video/mp4">
+              <source
+                src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/example_scenes/indoor6_scene5.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -309,7 +331,10 @@
         <div class="carousel-item">
           <div class="ratio ratio-16x9">
             <video class="d-block w-100" loop muted>
-              <source src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/example_scenes/rio10_scene1.mp4" type="video/mp4">
+              <source
+                src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/example_scenes/rio10_scene1.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -320,7 +345,10 @@
         <div class="carousel-item">
           <div class="ratio ratio-16x9">
             <video class="d-block w-100" loop muted>
-              <source src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/example_scenes/rio10_scene5.mp4" type="video/mp4">
+              <source
+                src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/example_scenes/rio10_scene5.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -331,7 +359,10 @@
         <div class="carousel-item">
           <div class="ratio ratio-16x9">
             <video class="d-block w-100" loop muted>
-              <source src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/example_scenes/rio10_scene6.mp4" type="video/mp4">
+              <source
+                src="https://storage.googleapis.com/niantic-lon-static/research/ace-g/example_scenes/rio10_scene6.mp4"
+                type="video/mp4"
+              />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -340,13 +371,23 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#sceneCarousel" data-bs-slide="prev">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#sceneCarousel"
+        data-bs-slide="prev"
+      >
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#sceneCarousel" data-bs-slide="next">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#sceneCarousel"
+        data-bs-slide="next"
+      >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
@@ -354,22 +395,33 @@
     <div class="row justify-content-center">
       <div class="col-sm-3 mb-3 buttons">
         <div class="btn-group" role="group" aria-label="Indoor-6 scenes">
-          <button type="button" class="btn btn-primary scene-btn" data-slide="0">1</button>
-          <button type="button" class="btn btn-primary scene-btn" data-slide="1">3</button>
-          <button type="button" class="btn btn-primary scene-btn" data-slide="2">5</button>
+          <button type="button" class="btn btn-primary scene-btn" data-slide="0">
+            1
+          </button>
+          <button type="button" class="btn btn-primary scene-btn" data-slide="1">
+            3
+          </button>
+          <button type="button" class="btn btn-primary scene-btn" data-slide="2">
+            5
+          </button>
         </div>
         <h6 class="mb-2 dataset-label">Indoor-6</h6>
       </div>
       <div class="col-sm-3 mb-3 buttons">
         <div class="btn-group" role="group" aria-label="RIO10 scenes">
-          <button type="button" class="btn btn-secondary scene-btn" data-slide="3">1</button>
-          <button type="button" class="btn btn-secondary scene-btn" data-slide="4">5</button>
-          <button type="button" class="btn btn-secondary scene-btn" data-slide="5">6</button>
+          <button type="button" class="btn btn-secondary scene-btn" data-slide="3">
+            1
+          </button>
+          <button type="button" class="btn btn-secondary scene-btn" data-slide="4">
+            5
+          </button>
+          <button type="button" class="btn btn-secondary scene-btn" data-slide="5">
+            6
+          </button>
         </div>
         <h6 class="mb-2 dataset-label">RIO10</h6>
       </div>
     </div>
-    
 
     <h3>BibTeX</h3>
     <hr />
@@ -390,85 +442,86 @@
     <pre></pre>
 
     <script>
-      function drawingLoop() {
-          requestId = window.requestAnimationFrame(drawingLoop)
-          ctx.drawImage(vid, 0, 0, vidWidth, vidHeight, 0, 0, canvas.width, canvas.height);
-      }
-
       function setVideoBgColor(vid) {
-          // draw first four pixel of video to a canvas
-          // then get pixel color from that canvas
-          var canvas = document.createElement("canvas");
-          canvas.width = 100;
-          canvas.height = 100;
+        // adapted from: https://sansho.studio/blog/html-videos-correct-background-color
 
-          var ctx = canvas.getContext('2d');
+        // draw first four pixel of video to a canvas
+        // then get pixel color from that canvas
+        var canvas = document.createElement("canvas");
+        canvas.width = 8;
+        canvas.height = 8;
 
-          ctx.drawImage(vid, 0, 0, 100, 100);
-          var p = ctx.getImageData(0, 0, 100, 100).data;
-          //dont take the first but fourth pixel [r g b a]
-          document.body.style.backgroundColor = "rgb(" + p[0] + "," + p[1] + "," + p[2] + ")";
+        var ctx = canvas.getContext("2d");
+
+        ctx.drawImage(vid, 0, 0, 8, 8);
+        var p = ctx.getImageData(0, 0, 8, 8).data;
+
+        // only adjust color if it's roughly as expected to avoid failures with loading
+        if (
+          p[60] <= 35 &&
+          p[61] <= 35 &&
+          p[62] <= 35 &&
+          20 <= p[60] &&
+          20 <= p[61] &&
+          20 <= p[62]
+        ) {
+          document.body.style.backgroundColor =
+            "rgb(" + p[60] + "," + p[61] + "," + p[62] + ")";
+        }
       }
 
-        
       function setVideoBgColorDelayed(vid) {
-          setInterval(setVideoBgColor, 100, vid);
+        setInterval(setVideoBgColor, 100, vid);
       }
 
       // Scene carousel control - wrapped in IIFE to avoid conflicts
-      (function() {
-        $(document).ready(function() {
-          // Debug: check if elements exist
-          console.log('Scene buttons found:', $('.scene-btn').length);
-          console.log('Carousel found:', $('#sceneCarousel').length);
-          
+      (function () {
+        $(document).ready(function () {
           // Initialize carousel first
-          $('#sceneCarousel').carousel({
+          $("#sceneCarousel").carousel({
             interval: false,
-            wrap: false
+            wrap: false,
           });
-          
+
           // Function to update active button based on slide index
           function updateActiveButton(slideIndex) {
-            $('.scene-btn').removeClass('active');
-            $('.scene-btn[data-slide="' + slideIndex + '"]').addClass('active');
+            $(".scene-btn").removeClass("active");
+            $('.scene-btn[data-slide="' + slideIndex + '"]').addClass("active");
           }
-          
+
           // Function to play video for current slide
           function playCurrentVideo() {
-            $('#sceneCarousel video').each(function() {
+            $("#sceneCarousel video").each(function () {
               this.pause();
             });
-            
-            setTimeout(function() {
-              const currentVideo = $('#sceneCarousel .carousel-item.active video')[0];
+
+            setTimeout(function () {
+              const currentVideo = $("#sceneCarousel .carousel-item.active video")[0];
               if (currentVideo) {
                 currentVideo.currentTime = 0;
-                currentVideo.play().catch(e => console.log('Video play failed:', e));
+                currentVideo.play().catch((e) => console.log("Video play failed:", e));
               }
             }, 300);
           }
-          
+
           // Add click event listeners to all scene buttons
-          $('.scene-btn').on('click', function() {
-            console.log('Button clicked:', $(this).text(), 'data-slide:', $(this).attr('data-slide'));
-            
-            const slideIndex = parseInt($(this).attr('data-slide'));
-            
+          $(".scene-btn").on("click", function () {
+            const slideIndex = parseInt($(this).attr("data-slide"));
+
             // Use Bootstrap carousel method
-            $('#sceneCarousel').carousel(slideIndex);
-            
+            $("#sceneCarousel").carousel(slideIndex);
+
             // Update active states
             updateActiveButton(slideIndex);
-            
+
             // Video control
             playCurrentVideo();
           });
 
           // Listen for carousel slide events (left/right arrow clicks)
-          $('#sceneCarousel').on('slid.bs.carousel', function(event) {
+          $("#sceneCarousel").on("slid.bs.carousel", function (event) {
             const slideIndex = $(event.relatedTarget).index();
-            console.log('Carousel slid to index:', slideIndex);
+            console.log("Carousel slid to index:", slideIndex);
             updateActiveButton(slideIndex);
             playCurrentVideo();
           });
