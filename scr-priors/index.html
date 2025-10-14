@@ -1,1 +1,269 @@
-Coming soon...
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Scene Coordinate Reconstruction Priors">
+
+        <!--Facebook preview-->
+        <meta property="og:image" content="https://nianticspatial.github.io/scr-priors/assets/thumbnail_l.png">
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://nianticspatial.github.io/scr-priors/"/>
+        <meta property="og:title" content="Scene Coordinate Reconstruction Priors"/>
+        <meta property="og:description" content="High level priors for more stable training of implicit scene models like ACE and ACE0."/>
+
+        <!--Twitter preview-->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Scene Coordinate Reconstruction Priors" />
+        <meta name="twitter:description" content="High level priors for more stable training of implicit scene models like ACE and ACE0."/>
+        <meta name="twitter:image" content="https://nianticspatial.github.io/scr-priors/assets/thumbnail_l.png">
+
+        <title>Scene Coordinate Reconstruction Priors</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+              crossorigin="anonymous">
+
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css
+          integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+
+        <link href="style.css" rel="stylesheet">
+        <link rel="icon" href="assets/fav_icon.png">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row text-center">
+                <h1 class="mt-3">Scene Coordinate Reconstruction Priors</h1>
+                <h4 class="mb-4">ICCV 2025</h4>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-0 col-md-2"></div>
+                <div class="col-sm-12 col-md-8">
+                    <h6>
+                        <a href="https://scholar.google.com/citations?user=IVfbqkgAAAAJ&hl=en" target="_blank"><nobr>Wenjing Bian<sup>2</sup></nobr></a> &emsp;
+                        <a href="https://scholar.google.com/citations?user=m_SPRGUAAAAJ&hl=en/" target="_blank"><nobr>Axel Barroso-Laguna<sup>1</sup></nobr></a> &emsp;
+                        <a href="https://scholar.google.it/citations?user=r7osSm0AAAAJ&hl=en" target="_blank"><nobr>Tommaso Cavallari<sup>1</sup></nobr></a> &emsp;
+                        <a href="https://www.robots.ox.ac.uk/~victor/" target="_blank"><nobr>Victor Adrian Prisacariu<sup>1,2</sup></nobr></a> &emsp;
+                        <a href="https://ebrach.github.io/" target="_blank"><nobr>Eric Brachmann<sup>1</sup></nobr></a> &emsp;
+                    </h6>
+                    <sup>1</sup>Niantic&nbsp;&nbsp;&nbsp;<sup>2</sup><nobr>University of Oxford&nbsp;&nbsp;&nbsp;</nobr><br>
+                </div>
+                <div class="col-sm-0 col-md-2"></div>
+                <div class="col-md-12 mt-3">
+                    <a href="https://storage.googleapis.com/niantic-lon-static/research/scr-priors/scr-priors.pdf" class="btn btn-secondary btn-sm" target="_blank"><i class="fa-solid fa-file-pdf"></i>&nbsp;&nbsp;Paper</a>
+                    <a href="https://storage.googleapis.com/niantic-lon-static/research/scr-priors/scr-priors-supp.pdf" class="btn btn-secondary btn-sm" target="_blank"><i class="fa-solid fa-file-pdf"></i>&nbsp;&nbsp;Supplement</a>
+                    <a href="#" class="btn btn-secondary btn-sm" target="_blank"><i class="ai ai-arxiv"></i></i>&nbsp;&nbsp;arXiv</a>
+                    <a href="https://youtu.be/RkV6U5xYc20" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-brands fa-youtube"></i>&nbsp;&nbsp;Video</a>
+                    <a href="https://github.com/nianticlabs/scr-priors" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-brands fa-github"></i>&nbsp;&nbsp;Code</a>
+                    <a href="#citation" class="btn btn-secondary btn-sm"><i class="fa-solid fa-file"></i>&nbsp;&nbsp;BibTeX</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-0 col-md-2"></div>
+                <div class="col-sm-12 col-md-8">
+
+                    <h3 class="mt-3">Abstract</h3>
+                    <hr/>
+                    <p>
+                        Scene coordinate regression (SCR) models have proven to be powerful implicit scene
+                        representations for 3D vision, enabling visual relocalization and structure-from-motion. SCR
+                        models are trained specifically for one scene. If training images imply insufficient multi-view
+                        constraints SCR models degenerate. We present a probabilistic reinterpretation of training SCR
+                        models, which allows us to infuse high-level reconstruction priors. We investigate multiple such
+                        priors, ranging from simple priors over the distribution of reconstructed depth values to
+                        learned priors over plausible scene coordinate configurations. For the latter, we train a 3D
+                        point cloud diffusion model on a large corpus of indoor scans. Our priors push predicted 3D
+                        scene points towards plausible geometry at each training step to increase their likelihood. On
+                        three indoor datasets our priors help learning better scene representations, resulting in more
+                        coherent scene point clouds, higher registration rates and better camera poses, with a positive
+                        effect on down-stream tasks such as novel view synthesis and camera relocalization.
+                    </p>
+
+
+                    <h3 class="mt-5" id="overview"> Quick explainer</h3>
+                    <hr class="hr"/>
+                    <video class="w-100 mb-4" controls preload="none" poster="assets/thumbnail_l.png">
+                        <source src="https://storage.googleapis.com/niantic-lon-static/research/scr-priors/explainer_s.mp4" type="video/mp4" />
+                    </video>
+
+                    <h3 class="mt-5">Better geometry via scene-level priors</h3>
+                    <hr class="hr"/>
+                    <p>
+                        We reinterpret the common training objective of scene coordinate regression (SCR) models in a
+                        probabilistic manner, and infuse high-level priors that regularize the reconstruction. Below, we
+                        show maps learned by <a href="http://nianticlabs.github.io/ace" target="_blank">ACE</a> with and
+                        without our 3D point cloud diffusion prior.
+                        <b>Use the controls to switch between scenes.</b>
+                    </p>
+
+                    <div id="scrPriorsResults" class="carousel slide" data-bs-ride="false">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#scrPriorsResults" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#scrPriorsResults" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#scrPriorsResults" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#scrPriorsResults" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/scene5.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>Indoor6 - Scene5</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/scene3.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>Indoor6 - Scene3</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/scene2a.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>Indoor6 - Scene2a</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <video class="w-100" autoplay loop muted>
+                                    <source src="assets/scene1.mp4" type="video/mp4" />
+                                </video>
+                                <div class="carousel-caption">
+                                    <h5>Indoor6 - Scene1</h5>
+                                </div>
+                            </div>
+
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#scrPriorsResults" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#scrPriorsResults" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+
+
+                    <h3 class="mt-5">Overview</h3>
+                    <hr class="hr"/>
+
+                    <img class="w-100 mb-3" src="assets/system.png" alt=""/>
+                    <p>
+                        <b>Left:</b> SCR methods like <a href="http://nianticlabs.github.io/ace" target="_blank">ACE</a>
+                        or <a href="http://nianticlabs.github.io/acezero" target="_blank">ACEZero</a> learn an implicit
+                        scene representation by optimizing a reprojection loss on training images.
+                        <b>Right:</b> We add various priors as additional regularization. A depth distribution prior
+                        punishes significant divergence of reconstructed depth values from a target distribution. A 3D
+                        point cloud diffusion prior uses a pre-trained generative model to steer the reconstruction
+                        towards plausible scene layouts. A depth prior pushes reconstructed scene coordinates towards
+                        measured depth, if RGB-D training images are available.
+                    </p>
+
+                    <h3 class="mt-5">Priors can prevent degenerate reconstructions</h3>
+                    <hr class="hr"/>
+                    <p>
+                        Sometimes, ACE0 reconstructions degenerate due to insufficient multi-view constraints in the
+                        training images. This leads to cameras and scene geometry floating in space.
+                        Our priors can prevent such degenerate reconstructions, as shown below.
+                        <b>Use the controls to switch between priors.</b>
+                    </p>
+
+                    <video id="exampleVideo" class="w-100 mb-4" autoplay loop muted>
+                        <source src="assets/example_ace0_s.mp4" type="video/mp4" />
+                    </video>
+                    
+                    <div class="container" style="text-align: center; margin-bottom: 2rem;">
+                        <button id="ExampleBtn1" class="btn btn-primary">ACE0 (without priors)</button>
+                        <button id="ExampleBtn2" class="btn btn-secondary">Depth Distribution Prior</button>
+                        <button id="ExampleBtn3" class="btn btn-secondary">Diffusion Prior</button>
+                        <button id="ExampleBtn4" class="btn btn-secondary">Depth Prior (RGB-D)</button>
+                    </div>
+
+                    <h3 class="mt-5" id="citation">Please consider citing our paper</h3>
+                    <hr class="hr"/>
+                    <pre class="w-100 user-select-all font-monospace border border-secondary bg-dark mb-5 p-2">
+@inproceedings{bian2025scrpriors,
+    title={Scene Coordinate Reconstruction Priors},
+    author={Bian, Wenjing and Barroso-Laguna, Axel and Cavallari, Tommaso and Prisacariu, Victor Adrian and Brachmann, Eric},
+    booktitle={ICCV},
+    year={2025},
+}</pre>
+                </div>
+                <div class="col-sm-0 col-md-2"></div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+        <!-- <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script> -->
+
+        <script>
+            window.addEventListener('load', videoScroll);
+            window.addEventListener('scroll', videoScroll);
+
+            function videoScroll() {
+
+                if ( document.querySelectorAll('video[autoplay]').length > 0) {
+
+                    var windowHeight = window.innerHeight,
+                    videoEl = document.querySelectorAll('video[autoplay]');
+
+                    for (var i = 0; i < videoEl.length; i++) {
+
+                        var thisVideoEl = videoEl[i],
+                            videoHeight = thisVideoEl.clientHeight,
+                            videoClientRect = thisVideoEl.getBoundingClientRect().top;
+
+                        if ( (thisVideoEl.parentNode.classList.contains('carousel-item') && thisVideoEl.parentNode.classList.contains('active')) || (thisVideoEl.parentNode.nodeName === 'DIV' && !thisVideoEl.parentNode.classList.contains('carousel-item') )) {
+                            if ( videoClientRect <= ( (windowHeight) - (videoHeight*.8) ) && videoClientRect >= ( 0 - ( videoHeight*.2 ) ) ) {
+                                thisVideoEl.play();
+                            } else {
+                                thisVideoEl.pause();
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Video switching functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                const video = document.getElementById('exampleVideo');
+                const buttons = {
+                    'ExampleBtn1': 'assets/example_ace0_s.mp4',
+                    'ExampleBtn2': 'assets/example_depth_dist_s.mp4',
+                    'ExampleBtn3': 'assets/example_diffusion_s.mp4',
+                    'ExampleBtn4': 'assets/example_rgbd_s.mp4'
+                };
+
+                // Add click event listeners to all buttons
+                Object.keys(buttons).forEach(buttonId => {
+                    const button = document.getElementById(buttonId);
+                    if (button) {
+                        button.addEventListener('click', function() {
+                            // Update video source
+                            video.querySelector('source').src = buttons[buttonId];
+                            video.load(); // Reload the video with new source
+                            
+                            // Update button states
+                            document.querySelectorAll('#ExampleBtn1, #ExampleBtn2, #ExampleBtn3, #ExampleBtn4').forEach(btn => {
+                                btn.classList.remove('btn-primary');
+                                btn.classList.add('btn-secondary');
+                            });
+                            this.classList.remove('btn-secondary');
+                            this.classList.add('btn-primary');
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

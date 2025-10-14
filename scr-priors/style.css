@@ -1,0 +1,61 @@
+body {
+    background-color: black;
+    color: lightgray;
+}
+
+header {
+  position: relative;
+  height: 350px;
+  width: 100%;
+  overflow: hidden;
+}
+
+h1 {
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+a {
+  color: #598EDE;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a3cbfd;
+
+}
+
+hr {
+  color: #598EDE;
+  opacity:100;
+}
+
+.carousel-indicators {
+  bottom:40px
+}
+
+.carousel-caption {
+  bottom:0px
+}
+
+b {
+  color: white;
+}
+
+li {
+  color: lightgray;
+}
+
+/* Custom button styling for video switcher */
+.btn-primary {
+  background-color: #598EDE !important;
+  border-color: #598EDE !important;
+}
+
+.btn-primary:hover {
+  background-color: #4a7bc7 !important;
+  border-color: #4a7bc7 !important;
+}
