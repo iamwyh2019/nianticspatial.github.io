@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NaviNote</title>
+  <meta name="description"
+    content="NaviNote: Enabling In-situ Spatial Annotation Authoring to Support Exploration and Navigation for Blind and Low Vision People">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta charset="utf-8">
+
+  <!-- Facebook preview -->
+  <meta property="og:image" content="resources/social_card.png">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="..." />
+  <meta property="og:title"
+    content="NaviNote: Enabling In-situ Spatial Annotation Authoring to Support Exploration and Navigation for Blind and Low Vision People" />
+  <meta property="og:description"
+    content="NaviNote: Enabling In-situ Spatial Annotation Authoring to Support Exploration and Navigation for Blind and Low Vision People, CHI 2026" />
+
+  <!-- Twitter preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title"
+    content="NaviNote: Enabling In-situ Spatial Annotation Authoring to Support Exploration and Navigation for Blind and Low Vision People" />
+  <meta name="twitter:description"
+    content="NaviNote: Enabling In-situ Spatial Annotation Authoring to Support Exploration and Navigation for Blind and Low Vision People, CHI 2026" />
+  <meta name="twitter:image" content="resources/social_card.png">
+
+  <!-- Google Scholar Meta Tags -->
+  <meta name="citation_title" content="NaviNote: Enabling In-situ Spatial Annotation Authoring to Support Exploration and Navigation for Blind and Low Vision People">
+  <meta name="citation_author" content="Ruijia Chen">
+  <meta name="citation_author" content="Yuheng Wu">
+  <meta name="citation_author" content="Charlie Houseago">
+  <meta name="citation_author" content="Filipe Gaspar">
+  <meta name="citation_author" content="Filippo Aleotti">
+  <meta name="citation_author" content="Dorian Gálvez-López">
+  <meta name="citation_author" content="Oliver Johnston">
+  <meta name="citation_author" content="Diego Mazala">
+  <meta name="citation_author" content="Guillermo Garcia-Hernando">
+  <meta name="citation_author" content="Maryam Bandukda">
+  <meta name="citation_author" content="Gabriel Brostow">
+  <meta name="citation_author" content="Jessica Van Brummelen">
+  <meta name="citation_publication_date" content="2026-04">
+  <meta name="citation_conference_title"
+    content="Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems">
+  <meta name="citation_conference" content="CHI 2026">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2603.08837">
+
+  <!-- Style -->
+  <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" type="image/png" href="resources/favicon.png">
+</head>
+<body>
+  <div class="container" style="text-align:center; padding:2rem 15px">
+    <div class="row">
+      <h1 style="margin-bottom:0.1rem; font-variant: small-caps;">NaviNote</h1>
+      <h3 style="margin-top:0.1rem;margin-bottom:0.5rem;">
+        Enabling In-situ Spatial Annotation Authoring to Support Exploration and Navigation for Blind and Low Vision People</h3>
+      <h4 style="font-size:1.4em;">Accepted to CHI 2026</h4>
+    </div>
+    <div class="row" style="margin-top:1rem;">
+      <h4 style="font-size:1.1em;">
+        <a href="https://orcid.org/0000-0002-1655-6228">Ruijia Chen<sup>1*</sup></a> &emsp;
+        <a href="https://orcid.org/0009-0005-1828-400X">Yuheng Wu<sup>1*</sup></a> &emsp;
+        <a href="https://orcid.org/0000-0001-8700-5397">Charlie Houseago<sup>2</sup></a> &emsp;
+        <a href="https://orcid.org/0000-0001-5363-4961">Filipe Gaspar<sup>2</sup></a> &emsp;
+        <a href="https://orcid.org/0000-0002-8911-3241">Filippo Aleotti<sup>2</sup></a> &emsp;
+        <a href="https://orcid.org/0009-0009-0463-2279">Dorian Gálvez-López<sup>2</sup></a> &emsp;
+        <a href="https://orcid.org/0009-0002-3423-3526">Oliver Johnston<sup>2</sup></a> &emsp;
+        <a href="https://orcid.org/0000-0002-7481-802X">Diego Mazala<sup>2</sup></a> &emsp;
+        <a href="https://orcid.org/0000-0003-3215-7857">Guillermo Garcia-Hernando<sup>2</sup></a> &emsp;
+        <a href="https://orcid.org/0000-0002-2367-6471">Maryam Bandukda<sup>3</sup></a> &emsp;
+        <a href="https://orcid.org/0000-0001-8472-3828">Gabriel Brostow<sup>3</sup></a> &emsp;
+        <a href="https://orcid.org/0000-0002-4831-6296">Jessica Van Brummelen<sup>2</sup></a>
+      </h4>
+      <div><sup>1</sup>University of Wisconsin-Madison &nbsp;&nbsp; <sup>2</sup>Niantic Spatial, Inc. &nbsp;&nbsp; <sup>3</sup>University College London</div>
+      <div style="font-size:0.9em; margin-top:0.5em;"><sup>*</sup>Equal contribution</div>
+    </div>
+  </div>
+
+  <div class="container" style="max-width: 1000px">
+    <div class="row" style="text-align: center; padding:1rem">
+      <div class="col-xs-3"></div>
+      <div class="col-xs-2">
+        <!-- TODO: replace # with path to paper PDF -->
+        <a href="#" style="color:inherit">
+          <a href="#">
+            <i class="fa-solid fa-file-pdf fa-4x"></i></a>
+      </div>
+
+      <div class="col-xs-2">
+        <a href="https://arxiv.org/abs/2603.08837" style="color:inherit;">
+          <a href="https://arxiv.org/abs/2603.08837">
+            <i class="fas fa-book fa-4x"></i></a>
+      </div>
+
+      <div class="col-xs-2">
+        <a href="https://youtu.be/M0kIoho02hM" style="color:inherit;">
+          <a href="https://youtu.be/M0kIoho02hM">
+            <i class="fa-brands fa-youtube fa-4x"></i></a>
+      </div>
+
+      <div class="col-xs-4"></div>
+
+    </div>
+  </div>
+
+
+  <div class="container" style="text-align:center; padding:1rem">
+    <br>
+    <img src="resources/teaser.png"
+      alt="A five-step diagram showing a blind user wearing a phone-mounted vest using NaviNote: (1) asking about the area, (2) navigating to a location, (3) listening to notes around them, (4) asking about notes near a statue, and (5) adding their own annotation."
+      class="text-center" style="width: 100%; max-width: 1200px">
+  </div>
+
+
+  <div class="container" style="max-width:1000px;">
+    <h3>Abstract</h3><hr/>
+    <p>
+      GPS and smartphones enable users to place location-based annotations, capturing rich environmental context. Previous research demonstrates that blind and low vision (BLV) people can use annotations to explore unfamiliar areas. However, current commercial systems allowing BLV users to create annotations have never been evaluated, and current GPS-based systems can deviate several meters. Motivated by high-accuracy visual positioning technology, we first conducted a formative study with 24 BLV participants to envision a more accurate and inclusive annotation system. Surprisingly, many participants viewed the high-accuracy technology not just as an annotation system but also as a tool for precise last-few-meters navigation. Guided by participant feedback, we developed NaviNote, which combines vision-based high-precision localization with an agentic architecture to enable voice-based annotation authoring and navigation. Evaluating NaviNote with 18 BLV participants showed that it significantly improved navigation performance and supported users in understanding and annotating their surroundings. Based on these findings, we discuss design considerations for future accessible annotation authoring systems.
+    </p>
+    <br>
+
+    <h3>Video</h3><hr/>
+    <div style="width: 100%; max-width: 1200px">
+      <iframe style="width: 100%; height: auto; aspect-ratio: 16 / 9; display: block;" src="https://www.youtube.com/embed/M0kIoho02hM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <br>
+
+    <h3>Example Annotations</h3><hr/>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      <!-- TODO: replace with description of example annotations/creations -->
+    </p>
+    <br>
+    <!-- TODO: replace with actual figure -->
+    <img src="https://placehold.co/1200x500?text=Figure+1"
+      alt="TODO: figure 1 alt text"
+      class="text-center" style="width: 100%; max-width: 1200px">
+    <figcaption style="margin-top: 1em; text-align: left;">
+      <!-- TODO: replace with actual figure caption -->
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </figcaption>
+    <br>
+    <!-- TODO: replace with actual figure -->
+    <img src="https://placehold.co/1200x500?text=Figure+2"
+      alt="TODO: figure 2 alt text"
+      class="text-center" style="width: 100%; max-width: 1200px">
+    <figcaption style="margin-top: 1em; text-align: left;">
+      <!-- TODO: replace with actual figure caption -->
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </figcaption>
+    <br>
+
+    <h3>System Overview</h3><hr/>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      <!-- TODO: replace with system overview description -->
+    </p>
+    <br>
+    <!-- TODO: replace with actual figure -->
+    <img src="https://placehold.co/1200x500?text=Figure+3"
+      alt="TODO: figure 3 alt text"
+      class="text-center" style="width: 100%; max-width: 1200px">
+    <figcaption style="margin-top: 1em; text-align: left;">
+      <!-- TODO: replace with actual figure caption -->
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </figcaption>
+    <br>
+    <!-- TODO: replace with actual figure -->
+    <img src="https://placehold.co/1200x500?text=Figure+4"
+      alt="TODO: figure 4 alt text"
+      class="text-center" style="width: 100%; max-width: 1200px">
+    <figcaption style="margin-top: 1em; text-align: left;">
+      <!-- TODO: replace with actual figure caption -->
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </figcaption>
+    <br>
+
+    <h3>User Study & Evaluation</h3><hr/>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <!-- TODO: replace with user study & evaluation description -->
+    </p>
+    <br>
+    <!-- TODO: replace with actual figure -->
+    <img src="https://placehold.co/1200x500?text=Figure+5"
+      alt="TODO: figure 5 alt text"
+      class="text-center" style="width: 100%; max-width: 1200px">
+    <figcaption style="margin-top: 1em; text-align: left;">
+      <!-- TODO: replace with actual figure caption -->
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </figcaption>
+    <br>
+
+    <h3>Resources</h3><hr/>
+    <div class="row text-center"> <!-- TODO: replace thumbnails & links below -->
+      <div class="col-xs-2 col-lg-2"></div>
+      <div class="col-xs-4 col-lg-4"><h4>Paper</h4>
+        <!-- TODO: replace # with paper PDF path -->
+        <a href="#"><img src="https://placehold.co/200x260?text=Paper" alt="Paper thumbnail" style="max-width:70%; border:0.15em solid; border-radius:0.5em;"></a>
+      </div>
+      <div class="col-xs-4 col-lg-4"><h4>Supplemental</h4>
+        <!-- TODO: replace # with supplemental PDF path -->
+        <a href="#"><img src="https://placehold.co/200x260?text=Supplemental" alt="Supplemental thumbnail" style="max-width:70%; border:0.15em solid; border-radius:0.5em;"></a>
+      </div>
+      <div class="col-xs-2 col-lg-2"></div>
+    </div>
+    <br>
+    <h4 style="padding-top:0.5em">BibTeX</h4>
+    <p>If you find this work useful for your research, please cite:</p>
+    <div class="card">
+      <div class="card-block">
+        <pre class="card-text clickselect">
+@inproceedings{chen2026navinote,
+  author = {Chen, Ruijia and Wu, Yuheng and Houseago, Charlie and Gaspar, Filipe and Aleotti, Filippo and Gálvez-López, Dorian and Johnston, Oliver and Mazala, Diego and Garcia-Hernando, Guillermo and Bandukda, Maryam and Brostow, Gabriel and Van Brummelen, Jessica},
+  title = {NaviNote: Enabling In-situ Spatial Annotation Authoring to Support Exploration and Navigation for Blind and Low Vision People},
+  year = {2026},
+  isbn = {TODO},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/TODO},
+  doi = {TODO},
+  booktitle = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},
+  location = {Barcelona, Spain},
+  series = {CHI '26},
+}</pre>
+      </div>
+    </div>
+    <br>
+
+    <h3>Acknowledgements</h3><hr/>
+    <p>
+      <!-- TODO: replace with actual acknowledgements -->
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+  </div>
+
+  <div class="container" style="padding-top:3rem; padding-bottom:3rem">
+    <p style="text-align:center">
+      &#169; This webpage was inspired by this
+      <a href="https://nianticlabs.github.io/simplerecon/">template</a>.
+    </p>
+  </div>
+</body>
+</html>
